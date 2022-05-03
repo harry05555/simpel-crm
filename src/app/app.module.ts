@@ -8,6 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { UserComponent } from './user/user.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatButtonModule,
+    MatTooltipModule,
   ],
   providers: [
     Title
