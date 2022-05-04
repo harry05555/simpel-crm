@@ -1,50 +1,49 @@
 <h1 mat-dialog-title>Hi add user</h1>
 <div mat-dialog-content>
+  
   <div>
     <mat-form-field class="mr-16" appearance="outline">
       <mat-label>First Names</mat-label>
-      <input matInput placeholder="Please enter the First Name.">
-      <!-- <mat-hint>What is your name?</mat-hint> -->
+      <input [(ngModel)]="user.firstName" matInput placeholder="Please enter the First Name.">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Last Names</mat-label>
-      <input matInput placeholder="Please enter the Last Name.">
-      <!--  <mat-hint>What is your Last name?</mat-hint> -->
+      <input [(ngModel)]="user.lastName" matInput placeholder="Please enter the Last Name.">
     </mat-form-field>
   </div>
 
   <div>
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Birth Data</mat-label>
-      <input matInput [matDatepicker]="picker3" [value]="">
-      <!-- <mat-hint>MM.DD.YYYY</mat-hint> -->
+      <input [(ngModel)]="user.birthDate" matInput [matDatepicker]="picker3" [value]="">
       <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
       <mat-datepicker #picker3></mat-datepicker>
     </mat-form-field>
   </div>
-  
+
   <div>
-  <mat-form-field class="full-width" appearance="outline">
+    <mat-form-field class="full-width" appearance="outline">
       <mat-label>Street + No.</mat-label>
-      <input matInput placeholder="Please enter your Street + No..">
-      <!--  <mat-hint>What is your Last name?</mat-hint> -->
+      <input [(ngModel)]="user.street" matInput placeholder="Please enter your Street + No..">
     </mat-form-field>
   </div>
+
   <div>
     <mat-form-field class="mr-16" appearance="outline">
       <mat-label>Zip code</mat-label>
-      <input matInput placeholder="Please enter your Zip code.">
-      <!--  <mat-hint>What is your Last name?</mat-hint> -->
+      <input [(ngModel)]="user.zipCode" matInput placeholder="Please enter your Zip code.">
     </mat-form-field>
+
     <mat-form-field appearance="outline">
       <mat-label>City</mat-label>
-      <input matInput placeholder="Please enter your City.">
-      <!--  <mat-hint>What is your Last name?</mat-hint> -->
+      <input [(ngModel)]="user.city" matInput placeholder="Please enter your City.">
     </mat-form-field>
   </div>
+
 </div>
+
 <div mat-dialog-actions>
   <button mat-button [mat-dialog-close]="" cdkFocusInitial>No Thanks</button>
-  <button mat-button (click)="save()">Save</button>
+  <button mat-button (click)="saveUser()">Save</button>
 </div>

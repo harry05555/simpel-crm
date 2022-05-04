@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../models/user.class';
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -7,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogAddUserComponent implements OnInit {
 
+  user: User = new User();
+
   constructor() { }
 
   ngOnInit(): void {
 
   }
 
-  save() {
+  saveUser(){
+    console.log(this.user);
+    
   }
-
 }
