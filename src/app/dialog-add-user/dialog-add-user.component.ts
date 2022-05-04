@@ -9,7 +9,6 @@ import { User } from '../models/user.class';
 export class DialogAddUserComponent implements OnInit {
 
   user: User = new User();
-
   constructor() { }
 
   ngOnInit(): void {
@@ -18,6 +17,6 @@ export class DialogAddUserComponent implements OnInit {
 
   saveUser(){
     console.log(this.user);
-    
+    console.log(this.user.birthDate.getTime());
   }
 }

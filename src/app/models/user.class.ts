@@ -3,7 +3,7 @@ export class User {
     private _firstName!: string;
     private _lastName!: string;
     private _street!: string;
-    private _birthDate!: string;
+    private _birthDate!: Date;
     private _zipCode!: string;
     private _city!: string;
  
@@ -34,11 +34,11 @@ export class User {
         this._street = value;
     }
 
-    public get birthDate(): string {
+    public get birthDate(): Date {
         return this._birthDate;
     }
-
-    public set birthDate(value: string) {
+    
+    public set birthDate(value: Date) {
         this._birthDate = value;
     }
 
