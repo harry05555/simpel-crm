@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { TitleService } from '../title.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +9,9 @@ import { Title } from '@angular/platform-browser';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private titleService: Title) { }
+  constructor(private titleService: Title, private title : TitleService) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('SimpelCrm - Dashboard');
+    this.titleService.setTitle(this.title.title + " - Dashboard");
   }
 }

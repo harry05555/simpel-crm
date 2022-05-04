@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
+import { TitleService } from '../title.service';
 
 @Component({
   selector: 'app-user',
@@ -10,10 +11,10 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
 })
 export class UserComponent implements OnInit {
 
-  constructor(private titleService: Title, public dialog: MatDialog) { }
+  constructor(private titleService: Title, public dialog: MatDialog, private title : TitleService) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('SimpelCrm - User');
+    this.titleService.setTitle(this.title.title + " - User");
   }
 
   openDialog() {
