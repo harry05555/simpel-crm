@@ -63,3 +63,9 @@
     padding-left: 56px;
     padding-right: 56px;
 }
+
+.logo-img{
+    &:hover {
+        cursor: pointer;
+    }
+}
