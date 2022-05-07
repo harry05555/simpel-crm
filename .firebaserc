@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sssimpel-crmss-f08ad": {
+      "hosting": {
+        "simpel-crm": [
+          "sssimpel-crmss-f08ad"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sssimpel-crmss-f08ad"
+  }
+}
