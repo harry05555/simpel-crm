@@ -60,7 +60,7 @@ export class User {
     toJson() {
         return {
             firstName: this.firstName,
-            lastname: this.lastName,
+            lastName: this.lastName,
             birthDate: this.birthDate,
             zipCode: this.zipCode,
             city: this.city,
