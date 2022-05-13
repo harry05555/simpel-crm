@@ -6,6 +6,7 @@ export class User {
     private _birthDate!: Date;
     private _zipCode!: string;
     private _city!: string;
+    private _email!: string;
 
     constructor(obj?: any) {
 
@@ -57,6 +58,13 @@ export class User {
         this._city = value;
     }
 
+    public get email(): string {
+        return this._email;
+    }
+    public set email(value: string) {
+        this._email = value;
+    }
+
     toJson() {
         return {
             firstName: this.firstName,
@@ -64,6 +72,7 @@ export class User {
             birthDate: this.birthDate,
             zipCode: this.zipCode,
             city: this.city,
+            email : this.email,
         }
     }
 }
