@@ -25,6 +25,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { MatMenuModule } from '@angular/material/menu';
     DashboardComponent,
     UserComponent,
     DialogAddUserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    DialogEditUserComponent,
+    DialogEditAddressComponent,
   ],
   imports: [
     BrowserModule,

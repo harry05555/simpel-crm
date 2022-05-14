@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../models/user.class';
+import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
 
 @Component({
   selector: 'app-user-detail',
@@ -13,7 +16,7 @@ export class UserDetailComponent implements OnInit {
   private _userId!: string | null;
   private _user!: User;
 
-  constructor(private rout: ActivatedRoute, private firestore: AngularFirestore) { }
+  constructor(private rout: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.rout.paramMap.subscribe(paramMap => {
@@ -26,6 +29,18 @@ export class UserDetailComponent implements OnInit {
     this.firestore.collection('user').doc(this.userId!).valueChanges().subscribe((user: any) => {
       this.user = new User(user);
     });
+  }
+
+  editUserDitail() {
+    const dialog = this.dialog.open(DialogEditUserComponent);
+    dialog.componentInstance.user = new User(this.user.toJson());
+    dialog.componentInstance.userId = this.userId;
+  }
+
+  editAddress() {
+    const dialog = this.dialog.open(DialogEditAddressComponent);
+    dialog.componentInstance.user = new User(this.user.toJson());
+    dialog.componentInstance.userId = this.userId;
   }
 
   public get user(): User {
