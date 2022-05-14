@@ -20,7 +20,6 @@ export class UserComponent implements OnInit {
     this.titleService.setTitle(this.title.title + " - User");
     this.firestore.collection('user').valueChanges({idField: 'userId'}).subscribe((changes: any) => {
       this.allUsers = changes;
-      console.log(changes);
     });
   }
 
